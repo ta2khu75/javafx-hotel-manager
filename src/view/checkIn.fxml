@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CheckIn">
+   <children>
+      <VBox alignment="CENTER" prefHeight="280.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblRoom" text="Room:">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="31.0" prefWidth="640.0" />
+            <BorderPane prefHeight="247.0" prefWidth="640.0">
+               <top>
+                  <GridPane alignment="CENTER_LEFT" prefHeight="125.0" prefWidth="640.0" style="-fx-border-color: red; -fx-border-width: 4px;" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="60.0" text="Id:" />
+                              <TextField fx:id="txtId" prefHeight="24.0" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label prefWidth="60.0" text="Name:" />
+                              <TextField fx:id="txtName" layoutX="53.0" layoutY="13.0" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="330.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label prefWidth="60.0" text="Birthday:" />
+                              <DatePicker fx:id="chsDay" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="40.0" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label prefWidth="60.0" text="Gender:" />
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <left>
+                                    <RadioButton fx:id="rdoMale" mnemonicParsing="false" text="Male" BorderPane.alignment="CENTER">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="gender" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                 </left>
+                                 <right>
+                                    <RadioButton fx:id="rdoFemale" mnemonicParsing="false" text="Female" toggleGroup="$gender" BorderPane.alignment="CENTER" />
+                                 </right>
+                              </BorderPane>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutX="330.0" layoutY="163.0" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Customer Information">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label prefWidth="60.0" text="Phone:" />
+                              <TextField fx:id="txtPhone" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </top>
+               <bottom>
+                  <GridPane prefHeight="125.0" style="-fx-border-color: green; -fx-border-width: 4px;" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label prefWidth="60.0" text="In:" />
+                              <DatePicker fx:id="chsIn" prefHeight="24.0" prefWidth="200.0">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin></DatePicker>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <Label prefWidth="60.0" text="Out:" />
+                              <DatePicker fx:id="chsOut" prefHeight="24.0" prefWidth="200.0">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin></DatePicker>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label prefWidth="60.0" text="Type:" />
+                              <BorderPane prefHeight="39.0" prefWidth="199.0">
+                                 <left>
+                                    <RadioButton fx:id="rdoDay" mnemonicParsing="false" onMouseClicked="#setPriceDay" text="Date" BorderPane.alignment="CENTER">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="type" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                 </left>
+                                 <center>
+                                    <RadioButton fx:id="rdoHour" mnemonicParsing="false" onMouseClicked="#setPriceHour" text="Hour" toggleGroup="$type" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="lblPrice" text="Price:">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Booking Information">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="69.0" prefWidth="640.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#checkIn" text="Check In" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </bottom>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="1000.0" prefWidth="1400.0" styleClass="homePage" stylesheets="@fxml.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePage">
+   <children>
+      <BorderPane layoutX="14.0" layoutY="7.0" prefHeight="913.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="907.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" onMouseClicked="#bookRoom" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Book Room">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="500.0" onMouseClicked="#managerCustomer" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Customer">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="500.0" onMouseClicked="#managerBill" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Bill">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="500.0" onMouseClicked="#managerRoom" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Room">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="570.0" onMouseClicked="#managerService" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Service">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="570.0" onMouseClicked="#managerStaff" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Employee">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="410.0" onMouseClicked="#managerStatistic" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Statistic">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Pane prefHeight="280.0" prefWidth="200.0" />
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="570.0" onMouseClicked="#signOut" prefHeight="70.0" prefWidth="200.0" styleClass="manager" text="Sign Out">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </VBox>
+         </left>
+         <center>
+            <ScrollPane prefHeight="877.0" prefWidth="1172.0" styleClass="pneItem" stylesheets="@fxml.css" BorderPane.alignment="CENTER">
+               <content>
+                  <GridPane fx:id="pneItem">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </center>
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="295.0">
+                     <children>
+                        <Label fx:id="lblUser" onMouseClicked="#changePass" styleClass="link" text="Welcome" textFill="BLUE">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblClock" text="08:30:40 20/11/2023">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <GridPane alignment="CENTER" prefHeight="100.0" prefWidth="1217.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="24.0" prefWidth="292.0">
+                                 <children>
+                                    <Pane prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: green;">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <Label text="Empty">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="24.0" prefWidth="292.0">
+                                 <children>
+                                    <Pane prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: red;">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <Label text="Booked">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="302.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="24.0" prefWidth="292.0">
+                                 <children>
+                                    <Pane prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: yellow;">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <Label text="Cleaning">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="594.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="24.0" prefWidth="292.0">
+                                 <children>
+                                    <Pane prefHeight="25.0" prefWidth="25.0" style="-fx-background-color: blue;">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <Label text="Updating">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

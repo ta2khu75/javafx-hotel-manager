@@ -1,0 +1,22 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.homePage {
+    -fx-background-color:linear-gradient(to bottom right, #79ade4, #df84e4);
+}
+.manager:hover{
+    -fx-background-color:linear-gradient(to bottom right, #df84e4,#e1d1d1);
+}
+.buttonLogin{
+    -fx-background-color:linear-gradient(to bottom right, #79ade4, #df84e4);
+}
+.buttonLogin:hover{
+    -fx-background-color:linear-gradient(to top left, #79ade4, #df84e4);
+}
+.link:hover{
+    -fx-text-fill:aquamarine
+}
+.link{
+    -fx-text-fill:#0078d4
+}

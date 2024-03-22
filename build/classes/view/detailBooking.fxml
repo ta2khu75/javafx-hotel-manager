@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="890.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DetailBooking">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="103.0" prefHeight="200.0" prefWidth="1163.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="60.0" prefWidth="1188.0">
+               <center>
+                  <Label fx:id="lblRoom" text="Room" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </center>
+               <right>
+                  <Button mnemonicParsing="false" onMouseClicked="#changeRoom" text="Change the room" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+            <BorderPane prefHeight="183.0" prefWidth="1155.0" style="-fx-border-color: red; -fx-border-width: 4px;">
+               <top>
+                  <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lblCustomer" text="Customer:" GridPane.rowIndex="1" />
+                        <Label fx:id="lblTimeIn" layoutX="10.0" layoutY="17.0" text="Time in:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lblHour" layoutX="294.0" layoutY="17.0" text="Hour price:" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label fx:id="lblDate" layoutX="578.0" layoutY="17.0" text="Price date:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label layoutX="10.0" layoutY="47.0" text="Booking Detail">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTimeOut" layoutX="241.0" layoutY="47.0" text="Time Out:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </top>
+               <center>
+                  <BorderPane prefHeight="85.0" prefWidth="755.0" BorderPane.alignment="CENTER">
+                     <left>
+                        <VBox prefHeight="115.0" prefWidth="390.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Booking Info">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="735.0">
+                                 <children>
+                                    <Label prefWidth="70.0" text="Time in:" />
+                                    <DatePicker fx:id="chsIn" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="28.0" prefHeight="34.0" prefWidth="700.0">
+                                 <children>
+                                    <Label prefWidth="70.0" text="Time out:" />
+                                    <DatePicker fx:id="chsOut" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="62.0" prefHeight="34.0" prefWidth="735.0">
+                                 <children>
+                                    <Label prefWidth="70.0" text="Type:" />
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <left>
+                                          <RadioButton fx:id="rdoDate" mnemonicParsing="false" onMouseClicked="#caculatorDate" text="Date" BorderPane.alignment="CENTER">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="type" />
+                                             </toggleGroup></RadioButton>
+                                       </left>
+                                       <right>
+                                          <RadioButton fx:id="rdoHour" mnemonicParsing="false" onMouseClicked="#caculatorHour" text="Hour" toggleGroup="$type" BorderPane.alignment="CENTER" />
+                                       </right>
+                                    </BorderPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </left>
+                     <right>
+                        <BorderPane prefHeight="115.0" prefWidth="390.0" BorderPane.alignment="CENTER">
+                           <left>
+                              <Label text="Price Room:" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </left>
+                           <right>
+                              <Label fx:id="lblPriceRoom" text="0" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </right>
+                        </BorderPane>
+                     </right>
+                  </BorderPane>
+               </center>
+               <left>
+                  <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                  <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </right>
+            </BorderPane>
+            <BorderPane prefHeight="667.0" prefWidth="1178.0">
+               <top>
+                  <VBox prefHeight="375.0" prefWidth="1178.0" style="-fx-border-color: green; -fx-border-width: 4px;" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="1135.0">
+                           <children>
+                              <Label text="Service Detail">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Pane prefHeight="200.0" prefWidth="200.0" />
+                              <Label text="Type Service:" />
+                              <ComboBox fx:id="cboType" prefWidth="150.0" promptText="Choose Type" />
+                           </children>
+                        </HBox>
+                        <ScrollPane prefHeight="350.0" prefWidth="1170.0">
+                           <content>
+                              <GridPane fx:id="menuService">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </top>
+               <right>
+                  <VBox prefHeight="290.0" prefWidth="321.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label text="Pay">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <BorderPane prefHeight="42.0" prefWidth="318.0" />
+                        <BorderPane layoutX="10.0" layoutY="40.0" prefHeight="42.0" prefWidth="318.0">
+                           <left>
+                              <Label prefWidth="90.0" text="Money given:" BorderPane.alignment="CENTER" />
+                           </left>
+                           <center>
+                              <TextField fx:id="txtGiven" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane layoutX="10.0" layoutY="82.0" prefHeight="42.0" prefWidth="318.0">
+                           <left>
+                              <Label prefHeight="16.0" prefWidth="90.0" text="Refunds:" BorderPane.alignment="CENTER" />
+                           </left>
+                           <center>
+                              <TextField fx:id="txtRefunds" disable="true" editable="false" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <Pane prefHeight="20.0" prefWidth="318.0" />
+                        <BorderPane prefHeight="46.0" prefWidth="318.0">
+                           <left>
+                              <Label text="Total Price:" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </left>
+                           <center>
+                              <Label fx:id="lblTotal" text="Total Services:" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </center>
+                        </BorderPane>
+                        <VBox alignment="BOTTOM_RIGHT" prefHeight="66.0" prefWidth="318.0">
+                           <children>
+                              <Button layoutX="128.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#pay" prefWidth="200.0" text="Pay">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </right>
+               <center>
+                  <VBox prefHeight="290.0" prefWidth="840.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView fx:id="tblService" onMouseClicked="#editTable" prefHeight="297.0" prefWidth="867.0">
+                           <columns>
+                              <TableColumn fx:id="colStt" prefWidth="75.0" text="STT" />
+                              <TableColumn fx:id="colName" prefWidth="265.0" text="NAME" />
+                              <TableColumn fx:id="colPrice" prefWidth="156.0" text="PRICE" />
+                              <TableColumn fx:id="colQuantity" prefWidth="153.0" text="QUANTITY" />
+                              <TableColumn fx:id="colTotalAmount" prefWidth="220.0" text="TOTAL AMOUNT" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="867.0">
+                           <children>
+                              <Label layoutX="10.0" layoutY="22.0" text="Total Services:">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPriceService" layoutX="10.0" layoutY="10.0" text="0">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
